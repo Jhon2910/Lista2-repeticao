@@ -3,69 +3,82 @@ import java.util.Scanner;
 public class jonathan17{
     public static void main(String[]args) {
         Scanner sc = new Scanner(System.in);
-        double soma=0,sub=0,mult=0,div = 0,n,resposta;
-        int i,repetir=0,sair, op,quantidade;
 
-        while (repetir < Integer.MAX_VALUE){
+        double n1, n2;
+        double soma=0,div=0,mult=0,sub=0;
+        int opcao, i = 0;
 
-        System.out.print("\nDigite quantos numeros gostaria de calcular: ");
-        while (!sc.hasNextInt()){
-            System.out.println("Numero inválido!");
-            sc.next();
-        }
-        quantidade = sc.nextInt();
+        while (i < Integer.MAX_VALUE) {
 
-        if (quantidade < 1){
-            System.out.print("Digigte um numero maior que 0!");
-            sc.next();
-            while (!sc.hasNextInt()){
-                System.out.print("Digigte um numero maior que 0!");
+            System.out.println("\n--------------------------------------------");
+            System.out.println("--------------------------------------------");
+            System.out.print("          Calculadora de Jonathan");
+            System.out.println("\n--------------------------------------------");
+            System.out.println("--------------------------------------------");
+
+            System.out.println("Opções:");
+            System.out.println("        1 -Soma");
+            System.out.println("        2 -Subtração");
+            System.out.println("        3 -Multiplicação");
+            System.out.println("        4 -Divisão");
+            System.out.println("        5 -Sair");
+
+            System.out.println("\n--------------------------------------------");
+            System.out.println("--------------------------------------------");
+
+            System.out.print("\nDigite a Opçao: ");
+            while (!sc.hasNextDouble()) {
+                System.out.println("Opcao invalida!");
                 sc.next();
             }
-            quantidade = sc.nextInt();
-        }
+            opcao = sc.nextInt();
 
-        else {
-            System.out.print("Digite os numeros que gostaria de calcular: ");
-            while (!sc.hasNextInt()) {
-                System.out.print("numero inválido");
-                System.out.print("Digite os numeros que gostaria de calcular: ");
-                n = sc.nextDouble();
-                if (quantidade >= 1 && quantidade <= 5) {
+            while (opcao < 1 || opcao > 5) {
+                System.out.print("Digite valores entre 1 e 5!");
+                System.out.print("\nDigite a Opçao: ");
+                while (!sc.hasNextDouble()) {
+                    System.out.println("Opcao invalida!");
+                    System.out.print("Digite valores entre 1 e 5!");
+                    System.out.print("\nDigite a Opçao: ");
+                    sc.next();
                 }
+                opcao = sc.nextInt();
+            }
 
-                System.out.print("--------------Menu----------------");
-                System.out.println("1 - soma");
-                System.out.println("2 - sub");
-                System.out.println("3 - mult");
-                System.out.println("4 - div");
-                System.out.println("5 - Sair");
+            System.out.print("Digite o 1 numero: ");
+            while (!sc.hasNextDouble()) {
+                System.out.println("Digite apenas numeros validos!");
+                System.out.print("Digite o 1 numero: ");
+                sc.next();
+            }
+            n1 = sc.nextInt();
 
-                System.out.print("\nDigite a opção: ");
-                op = sc.nextInt();
-                if (op < 1 || op > 5 || !sc.hasNextInt()) {
-                    System.out.print("Numero inválido!");
-                    return;
-                }
+            System.out.print("Digite o 2 numero: ");
+            while (!sc.hasNextDouble()) {
+                System.out.println("Digite apenas numeros validos!");
+                System.out.print("Digite o 2 numero: ");
+            }
+                n2 = sc.nextInt();
 
-                if (op == 1) {
-                    soma =+ n;
-                    System.out.printf("\nA soma = %.2f\",resposta", soma);
-                } else if (op == 2) {
-                    sub =- n;
-                    System.out.printf("\nA sub = %.2f\",resposta", sub);
-                } else if (op == 3) {
-                    System.out.printf("\nA mult = %.2f\",resposta", mult);
-                    mult *= n;
-                } else if (op == 4) {
-                    div /= n;
-                    System.out.printf("\nA div = %.2f\",resposta", div);
+                if (opcao == 1) {
+                    soma = n1 + n2;
+                    System.out.printf("%.2f + %.2f = %.2f",n1,n2,soma);
+                } else if (opcao == 2) {
+                    sub = n1 - n2;
+                    System.out.printf("%.2f - %.2f = %.2f",n1,n2,sub);
+                } else if (opcao == 3) {
+                    mult = n1 * n2;
+                    System.out.printf("%.2f * %.2f = %.2f",n1,n2,mult);
+                } else if (opcao == 4) {
+                    div = n1 / n2;
+                    System.out.printf("%.2f / %.2f = %.2f",n1,n2,div);
                 } else {
                     return;
                 }
+            i++;
             }
-            repetir++;
+        sc.close();
         }
-        }
+
+
     }
-}
