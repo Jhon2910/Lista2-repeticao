@@ -1,25 +1,20 @@
 import java.util.Scanner;
 
-public class jonathan22 {
+public class jonathan23 {
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        double pi,s = 1;
-        int i;
-        double denominador = 1;
-        double par = 1;
 
-        for (i = 1;i<=51;i++){
-            double proximodenominador = denominador + 2;
-            if (denominador == par) {
-                s = 1 / denominador + 1 / proximodenominador;
-            }
-            else {
-                s = 1 / denominador - 1 / proximodenominador;
-            }
-            denominador = denominador + 2;
+
+        double s = 1;
+        double sinal = -1;
+        double denominador,fracao,pi;
+
+        for (denominador = 3; denominador < 51; denominador = denominador +2) {
+            fracao = 1/Math.pow(denominador,3);
+            s += sinal*fracao;
+            sinal *= -1;
         }
-
         pi = Math.cbrt(s * 32);
 
         System.out.printf("PI = %.10f", pi);
