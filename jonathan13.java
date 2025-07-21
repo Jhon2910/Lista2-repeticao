@@ -4,9 +4,21 @@ public class jonathan13 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int n;
-        int i = 0;
+        int finalizar;
 
-        while (i < Integer.MAX_VALUE) {
+        while (true) {
+            System.out.print("Para finalizar digite 0 ou qualquer outro numero para continuar: ");
+            while (!sc.hasNextInt()) {
+                System.out.println("Digite apenas numeros inteiros!");
+                System.out.print("Para finalizar digite 0 ou qualquer outro numero para continuar: ");
+                sc.next();
+            }
+            finalizar = sc.nextInt();
+
+            if (finalizar == 0) {
+                System.out.println("Finalizando!");
+                return;
+            }
             System.out.print("\nDigite um número para saber se é primo ou não: ");
             while (!sc.hasNextInt()) {
                 System.out.print("\nErro! Você não digitou um número válido! Tente novamente.");
