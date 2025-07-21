@@ -3,11 +3,25 @@ import java.util.Scanner;
 public class jonathan14 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        int i = 0;
         int n,n1;
         int fatorial;
 
-        while (i < Integer.MAX_VALUE) {
+       int finalizar;
+
+        while (true) {
+            System.out.print("Para finalizar digite 0 ou qualquer outro numero para continuar: ");
+            while (!sc.hasNextInt()) {
+                System.out.println("Digite apenas numeros inteiros!");
+                System.out.print("Para finalizar digite 0 ou qualquer outro numero para continuar: ");
+                sc.next();
+            }
+            finalizar = sc.nextInt();
+
+            if (finalizar == 0) {
+                System.out.println("Finalizando!");
+                return;
+            }
+            
             System.out.print("\nDigite um valor para saber o fatorial: ");
             while (!sc.hasNextInt()){
                 System.out.print("\nValor invalido, tente novamente!");
@@ -35,7 +49,6 @@ public class jonathan14 {
             else {
                 System.out.print("\nDigite um valor maior ou igaul a 0!");
             }
-            i++;
         }
         sc.close();
     }
