@@ -6,7 +6,7 @@ public class jonathan14 {
         int n,n1;
         int fatorial;
 
-       int finalizar;
+        int finalizar;
 
         while (true) {
             System.out.print("Para finalizar digite 0 ou qualquer outro numero para continuar: ");
@@ -21,7 +21,7 @@ public class jonathan14 {
                 System.out.println("Finalizando!");
                 return;
             }
-            
+
             System.out.print("\nDigite um valor para saber o fatorial: ");
             while (!sc.hasNextInt()){
                 System.out.print("\nValor invalido, tente novamente!");
@@ -48,8 +48,8 @@ public class jonathan14 {
             }
             else {
                 System.out.print("\nDigite um valor maior ou igaul a 0!");
-            }
+            } sc.close();
         }
-        sc.close();
+       
     }
 }
