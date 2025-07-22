@@ -3,23 +3,23 @@ import java.util.Scanner;
 class jonathan24 {
 
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
+        Scanner sc = new Scanner(System.in);
 
         System.out.print("Digite o primeiro número inteiro positivo (A): ");
-        int a = scanner.nextInt();
+        int a = sc.nextInt();
 
         System.out.print("Digite o segundo número inteiro positivo (B): ");
-        int b = scanner.nextInt();
+        int b = sc.nextInt();
 
         if (a < 0 || b < 0) {
             System.out.println("Erro: Os números devem ser inteiros positivos.");
-            scanner.close();
+            sc.close();
             return;
         }
 
         if (b == 0) {
             System.out.println("Erro: Não é possível dividir por zero.");
-            scanner.close();
+            sc.close();
             return;
         }
 
@@ -34,6 +34,6 @@ class jonathan24 {
         System.out.println("O quociente da divisão de " + a + " por " + b + " é: " + quociente);
         System.out.println("O resto da divisão de " + a + " por " + b + " é: " + resto);
 
-        scanner.close();
+        sc.close();
     }
 }
